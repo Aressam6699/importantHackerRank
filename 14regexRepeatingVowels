@@ -1,0 +1,9 @@
+import re
+
+k = re.findall(r'(?<=[^aeiouAEIOU ])[aeiouAEIOU]{2,}(?=[^aeiouAEIOU ])',raw_input())
+
+if k:
+    for i in k:
+        print i
+else:
+    print -1

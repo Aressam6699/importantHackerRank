@@ -1,0 +1,106 @@
+def minion_game(string):
+    # your code goes here
+    kevin=0
+    stuart=0
+    res = [string[i:j] for i in range(len(s)) for j in  range(i+1,len(s))]
+    #print(res)
+    for i in res:
+        print(i)
+        if(i[0]=='A' or i[0]=='a' or i[0]=='E' or i[0] =='e' or i[0]=='I' or i[0]=='i' or i[0]=='O' or i[0]=='o' or i[0]=='U' or i[0]=='u'):
+            print("Vowel: ",kevin,"+",string.count(i))
+            kevin+= string.count(i)
+        else:
+            print("consonant: ",stuart,"+",string.count(i))
+            stuart+= string.count(i)
+
+    print(kevin)
+    print(stuart)
+    if(kevin > stuart):
+        print("Kevin "+kevin)
+    elif(stuart > kevin):
+        print("Stuart "+stuart)
+    else:
+        print("Draw")
+  
+if __name__ == '__main__':
+    s = input()
+    minion_game(s)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+def minion_game(string):
+    # your code goes here
+    a=dict()
+    b=dict()
+    res = [string[i:j] for i in range(len(s)) for j in  range(i+1,len(s))]
+    #print(res)
+    for i in res:
+        if(i[0]=='A' or i[0]=='a' or i[0]=='E' or i[0] =='e' or i[0]=='I' or i[0]=='i' or i[0]=='O' or i[0]=='o' or i[0]=='U' or i[0]=='u'):
+            a[i]= string.count(i)
+        else:
+            b[i]= string.count(i)
+    print(a)
+    print(b)
+  
+if __name__ == '__main__':
+    s = input()
+    minion_game(s)
+
+
+
+
+
+
+
+
+
+
+
+
+def count1(string1,i1):
+    count=0
+    for i in range(0,len(string1)-len(i1)+1):
+        if(string1[i:i+len(i1)] in i1):
+            count+=1
+    return(count)
+
+def minion_game(string):
+    # your code goes here
+    a=dict()
+    b=dict()
+    res = [string[i:j] for i in range(len(s)) for j in range(i+1,len(s)+1)]
+    #print(res)
+    for i in res:
+        if(i[0]=='A' or i[0]=='a' or i[0]=='E' or i[0] =='e' or i[0]=='I' or i[0]=='i' or i[0]=='O' or i[0]=='o' or i[0]=='U' or i[0]=='u'):
+            a[i]= count1(string,i)
+        else:
+            b[i]= count1(string,i)
+    kevin = sum(a.values())
+    stuart = sum(b.values())
+    if(kevin > stuart):
+        print("Kevin",kevin)
+    elif(stuart > kevin):
+        print("Stuart",stuart)
+    else:
+        print("Draw")
+
+if __name__ == '__main__':
+    s = input()
+    minion_game(s)

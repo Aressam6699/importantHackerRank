@@ -1,0 +1,14 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+
+a = set(map(int,input().split()))
+n = int(input())
+a2=[]
+for i in range(n):
+    a2.append(set(map(int,input().split())))
+flag = True
+for i in a2:
+    if(not a.issuperset(i)):
+        flag = False
+        break
+print(flag)
+

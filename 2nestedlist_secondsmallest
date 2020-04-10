@@ -1,0 +1,16 @@
+
+n = int(input())
+arr = [[input(),float(input())] for i in range(n)]
+arr.sort(key = lambda x : (x[1],x[0]))
+# sort in basis of marks(x[1]) first and if equal, thenm sort on basis of name(x[0])
+names = [i[0] for i in arr]
+marks = [i[1] for i in arr]
+
+#remove the minimum valued elements
+min_ = marks[0]
+while(marks[0]==min_):
+    marks.remove(marks[0])
+    names.remove(names[0])
+for i in range(len(marks)):
+    if(marks[i]==min(marks)):
+        print(names[i])

@@ -1,0 +1,7 @@
+import numpy
+n = int(input())
+matrix=[]
+for i in range(n):
+    a = list(map(float,input().split()))
+    matrix.append(a)
+print(round(numpy.linalg.det(matrix),2))
